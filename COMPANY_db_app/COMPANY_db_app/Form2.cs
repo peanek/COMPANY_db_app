@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace COMPANY_db_app
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
         }
+
+
     }
 }
