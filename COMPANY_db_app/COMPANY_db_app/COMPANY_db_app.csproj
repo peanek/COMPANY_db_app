@@ -70,62 +70,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompanyModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CompanyModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CompanyModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CompanyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CompanyModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CompanyModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DB_COMPANYDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DB_COMPANYDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="employees.cs">
-      <DependentUpon>CompanyModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="EmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="EmployeesForm.Designer.cs">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="projects.cs">
-      <DependentUpon>CompanyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="project_cooperation.cs">
-      <DependentUpon>CompanyModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="teams.cs">
-      <DependentUpon>CompanyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="work_items.cs">
-      <DependentUpon>CompanyModel.tt</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="EmployeesForm.resx">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -139,25 +104,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="CompanyModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CompanyModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="CompanyModel.edmx.diagram">
-      <DependentUpon>CompanyModel.edmx</DependentUpon>
-    </None>
-    <None Include="DB_COMPANYDataSet.xsc">
-      <DependentUpon>DB_COMPANYDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DB_COMPANYDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DB_COMPANYDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DB_COMPANYDataSet.xss">
-      <DependentUpon>DB_COMPANYDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="packages.config" />
     <None Include="Properties\DataSources\Form1.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
@@ -179,25 +125,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CompanyModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CompanyModel.Context.cs</LastGenOutput>
-      <DependentUpon>CompanyModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="CompanyModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CompanyModel.edmx</DependentUpon>
-      <LastGenOutput>CompanyModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="DB_COMPANY.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DB_COMPANY_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DB_COMPANY.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -29,10 +29,28 @@ namespace COMPANY_db_app
 
         private void employeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
+            EmployeesForm form = new EmployeesForm
+            {
+                MdiParent = this
+            };
             form.Show();
 
 
+        }
+
+        private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void horizontalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void verticalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileVertical);
         }
     }
 }
