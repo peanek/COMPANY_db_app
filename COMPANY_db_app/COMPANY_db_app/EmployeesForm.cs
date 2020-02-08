@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Entity.Infrastructure;
-using System.Drawing;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COMPANY_db_app
@@ -24,13 +19,9 @@ namespace COMPANY_db_app
         private void EmplyeesForm_Load(object sender, EventArgs e)
         {
             panelWithVariables.Enabled = false;
+
             database = new CompanyDatabaseEntity();
             employeesBindingSource.DataSource = database.employees.ToList();
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void button1New_Click(object sender, EventArgs e)
@@ -53,16 +44,8 @@ namespace COMPANY_db_app
 
         private void button2Edit_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
-
+            panelWithVariables.Enabled = true;
+            textBox1FirstName.Focus();
         }
 
         private void button3Save_Click(object sender, EventArgs e)
@@ -84,22 +67,36 @@ namespace COMPANY_db_app
         {
             panelWithVariables.Enabled = false;
             employeesBindingSource.ResetBindings(false);
-            foreach (DbEntityEntry entry in database.ChangeTracker.Entries())
+            foreach (var entry in database.ChangeTracker.Entries())
             {
                 switch (entry.State)
                 {
-                    case System.Data.Entity.EntityState.Detached:
+                    case EntityState.Added:
+                        entry.State = EntityState.Detached;
                         break;
-                    case System.Data.Entity.EntityState.Unchanged:
+                    case EntityState.Modified:
+                        entry.State = EntityState.Unchanged;
                         break;
-                    case System.Data.Entity.EntityState.Added:
+                    case EntityState.Deleted:
+                        entry.Reload();
                         break;
-                    case System.Data.Entity.EntityState.Deleted:
-                        break;
-                    case System.Data.Entity.EntityState.Modified:
-                        break;
-                    default:
-                        break;
+                    
+
+
+                    //case System.Data.Entity.EntityState.Detached:
+                    //    break;
+                    //case System.Data.Entity.EntityState.Unchanged:
+                    //    break;
+                    //case System.Data.Entity.EntityState.Added:
+                    //    break;
+                    //case System.Data.Entity.EntityState.Deleted:
+                    //    break;
+                    //case System.Data.Entity.EntityState.Modified:
+                    //    break;
+                    //default:
+                    //    break;
+
+
                 }
             }
 
@@ -109,6 +106,42 @@ namespace COMPANY_db_app
                 this.Close();
             }
 
+        }
+
+        private void textBox5SearchBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                if (string.IsNullOrEmpty(textBox5SearchBox.Text))
+                {
+                    dataGridView1EmployessGrid.DataSource = employeesBindingSource;
+
+                }
+                else
+                {
+                    var query = from o in employeesBindingSource.DataSource as List<employees>
+                                where o.FirstName.Contains(textBox5SearchBox.Text) || o.Middlename.Contains(textBox5SearchBox.Text) ||
+                                o.LastName.Contains(textBox5SearchBox.Text) || o.Email.Contains(textBox5SearchBox.Text) ||
+                                o.Team_Id.Equals(textBox5SearchBox.Text)
+                                select o;
+                    dataGridView1EmployessGrid.DataSource = query;    
+
+
+
+                }
+            }
+        }
+
+        private void dataGridView1EmployessGrid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (MessageBox.Show("Are you sure to delete this row??","Question",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes);
+                {
+                    database.employees.Remove(employeesBindingSource.Current as employees);
+                    employeesBindingSource.RemoveCurrent();
+                }
+            }
         }
     }
 }
