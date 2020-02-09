@@ -70,6 +70,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB_COMPANYDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_COMPANYDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="employees.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -139,14 +144,30 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DB_COMPANYDataSet.xsc">
+      <DependentUpon>DB_COMPANYDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DB_COMPANYDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_COMPANYDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_COMPANYDataSet.xss">
+      <DependentUpon>DB_COMPANYDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CompanyDatabaseEntity.datasource" />
     <None Include="Properties\DataSources\employees.datasource" />
-    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\EmployeesForm.datasource" />
+    <None Include="Properties\DataSources\MainForm.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\projects.datasource" />
+    <None Include="Properties\DataSources\project_cooperation.datasource" />
     <None Include="Properties\DataSources\teams.datasource" />
+    <None Include="Properties\DataSources\work_items.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
