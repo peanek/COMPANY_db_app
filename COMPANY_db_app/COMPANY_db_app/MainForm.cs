@@ -14,7 +14,7 @@ namespace COMPANY_db_app
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
 #pragma warning restore IDE1006 // Naming Styles
         {
-            MessageBox.Show("Copywright by \n Przemyslaw Peczkowski."); 
+            MessageBox.Show("Copyright by\nPrzemyslaw Peczkowski."); 
         }
 
 #pragma warning disable IDE1006 // Naming Styles
