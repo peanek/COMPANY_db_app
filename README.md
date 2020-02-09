@@ -52,7 +52,7 @@ Repository is here, just run it from VS.
 
 | <a href="Przemyslaw P." target="_blank">**Przemyslaw P.**</a> |
 | :---: |
-| [![FVCproductions](https://techcrunch.com/wp-content/uploads/2014/02/linkedin_logo.png?w=730&crop=1)](https://www.linkedin.com/in/przemys%C5%82aw-p/)    | 
+| [![FVCproductions](https://techcrunch.com/wp-content/uploads/2014/02/linkedin_logo.png?w=730&crop=1&s=200)](https://www.linkedin.com/in/przemys%C5%82aw-p/)    | 
 ---
 
 ## License
