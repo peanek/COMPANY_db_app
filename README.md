@@ -25,15 +25,17 @@ Repository is here, just run it from VS.
 
 - Add new rows >>>
 
-<a href="https://www.primevigilance.com/"><img src="https://github.com/peanek/COMPANY_db_app/blob/master/pictures/comapny_db_app_00_main.png" title="Main window app"></a>
+<a href="https://www.primevigilance.com/"><img src="https://github.com/peanek/COMPANY_db_app/blob/master/pictures/comapny_db_app_02_add.png" title="Main window app"></a>
 
 - Edit existing rows >>>
 
-<a href="https://www.primevigilance.com/"><img src="https://github.com/peanek/COMPANY_db_app/blob/master/pictures/comapny_db_app_00_main.png" title="Main window app"></a>
+<a href="https://www.primevigilance.com/"><img src="https://github.com/peanek/COMPANY_db_app/blob/master/pictures/comapny_db_app_03_edit.png" title="Main window app"></a>
 
 - Delete existing rows >>>
 
-<a href="https://www.primevigilance.com/"><img src="https://github.com/peanek/COMPANY_db_app/blob/master/pictures/comapny_db_app_00_main.png" title="Main window app"></a>
+<a href="https://www.primevigilance.com/"><img src="https://github.com/peanek/COMPANY_db_app/blob/master/pictures/comapny_db_app_04_delete.png" title="Main window app"></a>
+
+- Search rows, depend on Form configuration.
 
 ## FAQ
 
@@ -48,16 +50,9 @@ Repository is here, just run it from VS.
 
 ## Team
 
-> Or Contributors/People
-
-| <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> |
-| :---: |:---:| :---:|
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
-| <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> |
-
-- You can just grab their GitHub profile image URL
-- You should probably resize their picture using `?s=200` at the end of the image URL.
-
+| <a href="Przemyslaw P." target="_blank">**Przemyslaw P.**</a> |
+| :---: |
+| [![FVCproductions](https://techcrunch.com/wp-content/uploads/2014/02/linkedin_logo.png?w=730&crop=1)](https://www.linkedin.com/in/przemys%C5%82aw-p/)    | 
 ---
 
 ## License
