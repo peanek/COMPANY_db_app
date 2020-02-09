@@ -22,8 +22,6 @@ namespace COMPANY_db_app
             
         }
 
-
-
         private void EmplyeesForm_Load(object sender, EventArgs e)
         {
             panelWithVariables.Enabled = false;
@@ -97,11 +95,7 @@ namespace COMPANY_db_app
         {
             try
             {
-                
                 textBox1FirstName.Focus();
-                //employees employee = new employees();
-                //employeesBindingSource.Add(employee);
-                //employeesBindingSource.MoveLast();
                 string queryInsert = @"INSERT INTO [dbo].[employees]([FirstName],[Middlename],[LastName],[Email],[Team_Id])
                                 VALUES(@FirstName, @MiddleName, @LastName, @Email, @TeamID)";
                 using (connection = new SqlConnection(connectionStringToDb))
@@ -123,6 +117,7 @@ namespace COMPANY_db_app
             }
             finally
             {
+                MessageBox.Show("New employee succesfull added !", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 GetData(selectStarQuery);
                 dataGridView1EmployessGrid.Update();
                 connection.Close();
@@ -146,10 +141,6 @@ namespace COMPANY_db_app
                 MessageBox.Show(exception.Message,"Error message",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
-
-        
-        
-        
         //private void button3Save_Click(object sender, EventArgs e)
         //{
         //    try
@@ -281,20 +272,6 @@ namespace COMPANY_db_app
                 }
                 
             }
-            
-
-            //string columns = dataGridView1EmployessGrid.Columns.IndexOf('0').ToString();
-            //MessageBox.Show(columns);
-
-            //row = dataGridView1EmployessGrid.CurrentCell.OwningRow;
-            //string rowIdNum = row.Cells["id"].Value.ToString();
-            //string fName = row.Cells["FisrNameDataGridViewTextBoxColumn"].Value.ToString();
-            //string lName = row.Cells["LastNameDataGridViewTextBoxColumn"].Value.ToString();
-            //DialogResult result = MessageBox.Show($"Really want to delete {rowIdNum} Name : {fName}{lName}?", "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //if (result == DialogResult.Yes)
-            //{
-
-            //}
         }
 
 #pragma warning disable IDE1006 // Naming Styles

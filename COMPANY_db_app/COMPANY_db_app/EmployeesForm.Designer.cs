@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.label1FirstName = new System.Windows.Forms.Label();
             this.textBox1FirstName = new System.Windows.Forms.TextBox();
+            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox2MiddleNane = new System.Windows.Forms.TextBox();
             this.label2MiddleName = new System.Windows.Forms.Label();
             this.textBox3LastName = new System.Windows.Forms.TextBox();
@@ -44,24 +45,23 @@
             this.textBox5SearchBox = new System.Windows.Forms.TextBox();
             this.label6SearchEmplyee = new System.Windows.Forms.Label();
             this.dataGridView1EmployessGrid = new System.Windows.Forms.DataGridView();
-            this.button1Add = new System.Windows.Forms.Button();
-            this.button2Edit = new System.Windows.Forms.Button();
-            this.button3Cancel = new System.Windows.Forms.Button();
-            this.button5Delete = new System.Windows.Forms.Button();
-            this.checkBox1Editing = new System.Windows.Forms.CheckBox();
-            this.button8Search = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middlenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1Add = new System.Windows.Forms.Button();
+            this.button2Edit = new System.Windows.Forms.Button();
+            this.button3Cancel = new System.Windows.Forms.Button();
+            this.button5Delete = new System.Windows.Forms.Button();
+            this.checkBox1Editing = new System.Windows.Forms.CheckBox();
+            this.button8Search = new System.Windows.Forms.Button();
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             this.panelWithVariables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1EmployessGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +82,10 @@
             this.textBox1FirstName.Name = "textBox1FirstName";
             this.textBox1FirstName.Size = new System.Drawing.Size(171, 20);
             this.textBox1FirstName.TabIndex = 1;
+            // 
+            // employeesBindingSource
+            // 
+            this.employeesBindingSource.DataSource = typeof(COMPANY_db_app.employees);
             // 
             // textBox2MiddleNane
             // 
@@ -218,9 +222,50 @@
             this.dataGridView1EmployessGrid.DataSource = this.employeesBindingSource;
             this.dataGridView1EmployessGrid.Location = new System.Drawing.Point(9, 219);
             this.dataGridView1EmployessGrid.Name = "dataGridView1EmployessGrid";
-            this.dataGridView1EmployessGrid.ReadOnly = true;
             this.dataGridView1EmployessGrid.Size = new System.Drawing.Size(499, 150);
             this.dataGridView1EmployessGrid.TabIndex = 11;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 41;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // middlenameDataGridViewTextBoxColumn
+            // 
+            this.middlenameDataGridViewTextBoxColumn.DataPropertyName = "Middlename";
+            this.middlenameDataGridViewTextBoxColumn.HeaderText = "Middlename";
+            this.middlenameDataGridViewTextBoxColumn.Name = "middlenameDataGridViewTextBoxColumn";
+            this.middlenameDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // teamIdDataGridViewTextBoxColumn
+            // 
+            this.teamIdDataGridViewTextBoxColumn.DataPropertyName = "Team_Id";
+            this.teamIdDataGridViewTextBoxColumn.HeaderText = "Team_Id";
+            this.teamIdDataGridViewTextBoxColumn.Name = "teamIdDataGridViewTextBoxColumn";
+            this.teamIdDataGridViewTextBoxColumn.Width = 74;
             // 
             // button1Add
             // 
@@ -283,52 +328,6 @@
             this.button8Search.UseVisualStyleBackColor = true;
             this.button8Search.Click += new System.EventHandler(this.button8Search_Click);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 41;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // middlenameDataGridViewTextBoxColumn
-            // 
-            this.middlenameDataGridViewTextBoxColumn.DataPropertyName = "Middlename";
-            this.middlenameDataGridViewTextBoxColumn.HeaderText = "Middlename";
-            this.middlenameDataGridViewTextBoxColumn.Name = "middlenameDataGridViewTextBoxColumn";
-            this.middlenameDataGridViewTextBoxColumn.Width = 89;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // teamIdDataGridViewTextBoxColumn
-            // 
-            this.teamIdDataGridViewTextBoxColumn.DataPropertyName = "Team_Id";
-            this.teamIdDataGridViewTextBoxColumn.HeaderText = "Team_Id";
-            this.teamIdDataGridViewTextBoxColumn.Name = "teamIdDataGridViewTextBoxColumn";
-            this.teamIdDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // employeesBindingSource
-            // 
-            this.employeesBindingSource.DataSource = typeof(COMPANY_db_app.employees);
-            // 
             // teamsBindingSource
             // 
             this.teamsBindingSource.DataSource = typeof(COMPANY_db_app.teams);
@@ -353,10 +352,10 @@
             this.Name = "EmployeesForm";
             this.Text = "Employees Edit";
             this.Load += new System.EventHandler(this.EmplyeesForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             this.panelWithVariables.ResumeLayout(false);
             this.panelWithVariables.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1EmployessGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).EndInit();
             this.ResumeLayout(false);
