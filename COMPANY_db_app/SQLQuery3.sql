@@ -1,6 +1,17 @@
-﻿select * from employees
-SELECT * from teams
+﻿--select * from work_items
 
+--SELECT Id FROM projects
+--SELECT CONCAT(FirstName,' ',LastName) FROM employees
+
+SELECT * FROM project_cooperation
+
+
+--select * from employees
+----SELECT * from teams
+--SELECT * from projects
+
+----DELETE FROM teams where id = 8
+--SELECT * FROM projects WHERE lower(Name) like '%Cde%' or lower(ProjectManager_ID) like '%2%'
 
 
 --delete from employees where id >= 11 and id <= 21

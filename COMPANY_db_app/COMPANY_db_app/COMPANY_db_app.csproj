@@ -78,6 +78,24 @@
     <Compile Include="employees.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProjectAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectAssignment.Designer.cs">
+      <DependentUpon>ProjectAssignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectsForm.Designer.cs">
+      <DependentUpon>ProjectsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeamsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamsForm.Designer.cs">
+      <DependentUpon>TeamsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -122,11 +140,26 @@
     <Compile Include="teams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="WorkItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkItemsForm.Designer.cs">
+      <DependentUpon>WorkItemsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="work_items.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="EmployeesForm.resx">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectAssignment.resx">
+      <DependentUpon>ProjectAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectsForm.resx">
+      <DependentUpon>ProjectsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamsForm.resx">
+      <DependentUpon>TeamsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -140,6 +173,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WorkItemsForm.resx">
+      <DependentUpon>WorkItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -174,7 +210,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

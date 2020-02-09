@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
 using System.Data.SqlClient;
-
-using System.Linq;
 using System.Windows.Forms;
 
 namespace COMPANY_db_app
@@ -16,8 +12,7 @@ namespace COMPANY_db_app
         DataTable table;
         SqlConnection connection;
         SqlCommandBuilder commandBuilder;
-        CompanyDatabaseEntity database;
-        string selectrionStarStatement = "SELECT * FROM employees";
+        string selectStarQuery = "SELECT * FROM employees";
         DataGridViewRow row;
         SqlCommand command;
 
@@ -32,12 +27,12 @@ namespace COMPANY_db_app
         private void EmplyeesForm_Load(object sender, EventArgs e)
         {
             panelWithVariables.Enabled = false;
-            button1Add.Visible = false;
+            button1Add.Enabled = false;
             //To rewrite ?
             //database = new CompanyDatabaseEntity();
             //employeesBindingSource.DataSource = database.employees.ToList();
             dataGridView1EmployessGrid.DataSource = employeesBindingSource;
-            GetData(selectrionStarStatement);
+            GetData(selectStarQuery);
             FillComboBox();
 
         }
@@ -76,17 +71,17 @@ namespace COMPANY_db_app
             }
         }
 
-        private void GetData(string selectCommand)
+        private void GetData(string selectStarQuery)
         {
             try
             {
-                dataAdapter = new SqlDataAdapter(selectCommand, connectionStringToDb);
+                dataAdapter = new SqlDataAdapter(selectStarQuery, connectionStringToDb);
                 table = new DataTable();
 
                 //table.Locale = System.Globalization.CultureInfo.InvariantCulture;
                 dataAdapter.Fill(table);
                 employeesBindingSource.DataSource = table;
-                //dataGridView1EmployessGrid.Columns[0].ReadOnly = true;
+                dataGridView1EmployessGrid.Columns[0].ReadOnly = true;
 
             }
             catch (Exception exception)
@@ -96,7 +91,9 @@ namespace COMPANY_db_app
             
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void button1Add_Click(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             try
             {
@@ -126,7 +123,7 @@ namespace COMPANY_db_app
             }
             finally
             {
-                GetData(selectrionStarStatement);
+                GetData(selectStarQuery);
                 dataGridView1EmployessGrid.Update();
                 connection.Close();
             }
@@ -134,8 +131,7 @@ namespace COMPANY_db_app
 
         private void button2Edit_Click(object sender, EventArgs e)
         {
-            //panelWithVariables.Enabled = true;
-            //textBox1FirstName.Focus();
+            //Take actual selected row in DataTable and Update() -> try to -> with values edited
             commandBuilder = new SqlCommandBuilder(dataAdapter);
             dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();
             try
@@ -171,51 +167,11 @@ namespace COMPANY_db_app
         private void button4Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            
-            //panelWithVariables.Enabled = false;
-            //employeesBindingSource.ResetBindings(false);
-            //foreach (var entry in database.ChangeTracker.Entries())
-            //{
-            //    switch (entry.State)
-            //    {
-            //        case EntityState.Added:
-            //            entry.State = EntityState.Detached;
-            //            break;
-            //        case EntityState.Modified:
-            //            entry.State = EntityState.Unchanged;
-            //            break;
-            //        case EntityState.Deleted:
-            //            entry.Reload();
-            //            break;
-                    
-
-
-                    //case System.Data.Entity.EntityState.Detached:
-                    //    break;
-                    //case System.Data.Entity.EntityState.Unchanged:
-                    //    break;
-                    //case System.Data.Entity.EntityState.Added:
-                    //    break;
-                    //case System.Data.Entity.EntityState.Deleted:
-                    //    break;
-                    //case System.Data.Entity.EntityState.Modified:
-                    //    break;
-                    //default:
-                    //    break;
-
-
-            //    }
-            //}
-
-            //DialogResult message = MessageBox.Show("Do you want to close employee editor?", "Question:", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //if (message == DialogResult.Yes)
-            //{
-            //    this.Close();
-            //}
-
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void textBox5SearchBox_KeyPress(object sender, KeyPressEventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             if (e.KeyChar == (char)Keys.Return)
                 SearchLogic(e);
@@ -226,7 +182,6 @@ namespace COMPANY_db_app
                 if (comboBox1SearchItem.Text == "")
                 {
                     MessageBox.Show("Please select search property on left ! IT is empty !","Search error",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
-                    
                 }
             else
             {
@@ -234,7 +189,7 @@ namespace COMPANY_db_app
                 {
                     dataGridView1EmployessGrid.DataSource = employeesBindingSource;
                     comboBox1SearchItem.Text = "";
-                    GetData(selectrionStarStatement);
+                    GetData(selectStarQuery);
                 }
                 else
                 {
@@ -277,33 +232,25 @@ namespace COMPANY_db_app
             }
         }
 
-        private void dataGridView1EmployessGrid_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Delete)
-            {
-                if (MessageBox.Show("Are you sure to delete this row??","Question",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes);
-                {
-                    database.employees.Remove(employeesBindingSource.Current as employees);
-                    employeesBindingSource.RemoveCurrent();
-                }
-            }
-        }
-
+#pragma warning disable IDE1006 // Naming Styles
         private void checkBox1Editing_CheckedChanged(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             if (checkBox1Editing.Checked)
             {
                 panelWithVariables.Enabled = true;
-                button1Add.Visible = true;
+                button1Add.Enabled = true;
             }
             else
             {
                 panelWithVariables.Enabled = false;
-                button1Add.Visible = false;
+                button1Add.Enabled = false;
             } 
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void button5Delete_Click(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             connection = new SqlConnection(connectionStringToDb);
             row = new DataGridViewRow();
@@ -328,7 +275,7 @@ namespace COMPANY_db_app
                 }
                 finally
                 {
-                    GetData(selectrionStarStatement);
+                    GetData(selectStarQuery);
                     dataGridView1EmployessGrid.Update();
                     connection.Close();
                 }
@@ -350,7 +297,9 @@ namespace COMPANY_db_app
             //}
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void button8Search_Click(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             SearchLogic(e);
         }
