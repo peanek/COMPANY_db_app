@@ -10,7 +10,7 @@ for Prime Viginalce
 - C# with .NET 4.6.1,
 - UI in WindowsForms,
 - Miscrosoft SQL Server 2017 14.0 to Import .bacpac file, 
-- exported .MDF and .LDF file attached to Project.
+- ~~exported .MDF and .LDF file attached to Project.~~ changed SQL DB connection string to use local MS SQL instance of COMPANY_DB
 - Windows Integrated Authentication
 
 **Installation**
