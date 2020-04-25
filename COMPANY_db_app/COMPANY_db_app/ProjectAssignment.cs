@@ -7,7 +7,7 @@ namespace COMPANY_db_app
 {
     public partial class ProjectAssignment : Form
     {
-        string connectionStringToDb = @"Data Source=.\SQLEXPRESS;Initial Catalog=DB_COMPANY;Integrated Security=True;Connect Timeout=30";
+        string connectionStringToDb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|DB_COMPANY.mdf;Initial Catalog=DB_COMPANY;Integrated Security=True";
         SqlDataAdapter dataAdapter;
         DataTable table;
         SqlConnection connection;
